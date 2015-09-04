@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1C7F9D11B99DE4900704B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7F9D01B99DE4900704B50 /* AppDelegate.swift */; };
+		A1C7F9D81B99DE4900704B50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1C7F9D71B99DE4900704B50 /* Assets.xcassets */; };
+		A1C7F9DB1B99DE4900704B50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C7F9D91B99DE4900704B50 /* LaunchScreen.storyboard */; };
+		A1C7F9E51B99DE8500704B50 /* PeriscopyNavBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7F9E21B99DE8500704B50 /* PeriscopyNavBarExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		A1C7F9E61B99DE8500704B50 /* PeriscopyTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7F9E31B99DE8500704B50 /* PeriscopyTitleView.swift */; settings = {ASSET_TAGS = (); }; };
+		A1C7F9E91B99E02E00704B50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7F9E81B99E02E00704B50 /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A1C7F9CD1B99DE4900704B50 /* PeriscopyPullToRefreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeriscopyPullToRefreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1C7F9D01B99DE4900704B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1C7F9D71B99DE4900704B50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1C7F9DA1B99DE4900704B50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A1C7F9DC1B99DE4900704B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1C7F9E21B99DE8500704B50 /* PeriscopyNavBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeriscopyNavBarExtension.swift; path = ../../src/PeriscopyNavBarExtension.swift; sourceTree = "<group>"; };
+		A1C7F9E31B99DE8500704B50 /* PeriscopyTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeriscopyTitleView.swift; path = ../../src/PeriscopyTitleView.swift; sourceTree = "<group>"; };
+		A1C7F9E81B99E02E00704B50 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1C7F9CA1B99DE4900704B50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1C7F9C41B99DE4900704B50 = {
+			isa = PBXGroup;
+			children = (
+				A1C7F9CF1B99DE4900704B50 /* PeriscopyPullToRefreshDemo */,
+				A1C7F9CE1B99DE4900704B50 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1C7F9CE1B99DE4900704B50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1C7F9CD1B99DE4900704B50 /* PeriscopyPullToRefreshDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1C7F9CF1B99DE4900704B50 /* PeriscopyPullToRefreshDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A1C7F9D01B99DE4900704B50 /* AppDelegate.swift */,
+				A1C7F9E81B99E02E00704B50 /* ViewController.swift */,
+				A1C7F9E21B99DE8500704B50 /* PeriscopyNavBarExtension.swift */,
+				A1C7F9E31B99DE8500704B50 /* PeriscopyTitleView.swift */,
+				A1C7F9D71B99DE4900704B50 /* Assets.xcassets */,
+				A1C7F9D91B99DE4900704B50 /* LaunchScreen.storyboard */,
+				A1C7F9DC1B99DE4900704B50 /* Info.plist */,
+			);
+			path = PeriscopyPullToRefreshDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1C7F9CC1B99DE4900704B50 /* PeriscopyPullToRefreshDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1C7F9DF1B99DE4900704B50 /* Build configuration list for PBXNativeTarget "PeriscopyPullToRefreshDemo" */;
+			buildPhases = (
+				A1C7F9C91B99DE4900704B50 /* Sources */,
+				A1C7F9CA1B99DE4900704B50 /* Frameworks */,
+				A1C7F9CB1B99DE4900704B50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PeriscopyPullToRefreshDemo;
+			productName = PeriscopyPullToRefreshDemo;
+			productReference = A1C7F9CD1B99DE4900704B50 /* PeriscopyPullToRefreshDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1C7F9C51B99DE4900704B50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Andrzej Naglik";
+				TargetAttributes = {
+					A1C7F9CC1B99DE4900704B50 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = A1C7F9C81B99DE4900704B50 /* Build configuration list for PBXProject "PeriscopyPullToRefreshDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1C7F9C41B99DE4900704B50;
+			productRefGroup = A1C7F9CE1B99DE4900704B50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1C7F9CC1B99DE4900704B50 /* PeriscopyPullToRefreshDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1C7F9CB1B99DE4900704B50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1C7F9DB1B99DE4900704B50 /* LaunchScreen.storyboard in Resources */,
+				A1C7F9D81B99DE4900704B50 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1C7F9C91B99DE4900704B50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1C7F9E51B99DE8500704B50 /* PeriscopyNavBarExtension.swift in Sources */,
+				A1C7F9D11B99DE4900704B50 /* AppDelegate.swift in Sources */,
+				A1C7F9E91B99E02E00704B50 /* ViewController.swift in Sources */,
+				A1C7F9E61B99DE8500704B50 /* PeriscopyTitleView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A1C7F9D91B99DE4900704B50 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1C7F9DA1B99DE4900704B50 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1C7F9DD1B99DE4900704B50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1C7F9DE1B99DE4900704B50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1C7F9E01B99DE4900704B50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PeriscopyPullToRefreshDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.an.PeriscopyPullToRefreshDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A1C7F9E11B99DE4900704B50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PeriscopyPullToRefreshDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.an.PeriscopyPullToRefreshDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1C7F9C81B99DE4900704B50 /* Build configuration list for PBXProject "PeriscopyPullToRefreshDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1C7F9DD1B99DE4900704B50 /* Debug */,
+				A1C7F9DE1B99DE4900704B50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1C7F9DF1B99DE4900704B50 /* Build configuration list for PBXNativeTarget "PeriscopyPullToRefreshDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1C7F9E01B99DE4900704B50 /* Debug */,
+				A1C7F9E11B99DE4900704B50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1C7F9C51B99DE4900704B50 /* Project object */;
+}
