@@ -10,7 +10,7 @@ import UIKit
 
 extension UINavigationBar{
   
-  func stripeImage()->UIImage{
+  func stripeImage()->UIImage {
     UIGraphicsBeginImageContextWithOptions(CGSize(width: 32, height: 44), false, 0)
     let context = UIGraphicsGetCurrentContext()
     
@@ -37,11 +37,11 @@ extension UINavigationBar{
   }
   
   
-  func startLoadingAnimation() -> UIView{
+  func startLoadingAnimation() -> UIView {
     let image = stripeImage()
     let extraWidth = (image.size.width) * 8 //adding 8 additional stripes
 
-    let animatedView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: CGRectGetWidth(self.frame) + extraWidth, height: CGRectGetHeight(self.frame)))
+    let animatedView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: self.frame.width + extraWidth, height: self.frame.height))
     animatedView.backgroundColor = UIColor(patternImage: image)
     animatedView.opaque = false
     self.insertSubview(animatedView, atIndex: 1)

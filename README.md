@@ -7,15 +7,16 @@ Pull-To-Refresh view inspired by Periscope application (written in Swift). It wo
 ## Usage
 
 Simply create and assign object of PeriscopyTitleView's class as titleView of your current UINavigationItem. 
-You can customize font/color of labels presented in that view. Title string is taken directly from UINavigationItem but you can also assign it directly. 
+You can customize font/color of labels presented in that view. Title string is taken from UINavigationItem but you can also assign it directly. 
 
 When you "activate" mechanism, refreshAction block is called.
 
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
-	let titleView = PeriscopyTitleView(frame: CGRect(x: 0.0, y: 0.0, width: 140.0, height: CGRectGetHeight((self.navigationController?.navigationBar.frame)!)),
-	  					  attachToScrollView: tableView, refreshAction: { 
+    guard let navigationController = self.navigationController else { return }
+
+    let titleView = PeriscopyTitleView(frame: CGRect(x: 0.0, y: 0.0, width: 160.0, height: navigationController.navigationBar.frame.height), attachToScrollView: tableView, refreshAction: {  
 	  					  //your 'refreshing' code 
 	})
 
@@ -34,10 +35,10 @@ You don't need to add any png file to your asset catalog, 'stripes' are drawn us
 Example:
 
 ```swift
-let view = self.navigationController!.navigationBar.startLoadingAnimation()
+let view = navigationController.navigationBar.startLoadingAnimation()
 //keep reference of 'animating' view
 //..
-self.navigationController?.navigationBar.stopLoadingAnimationWithView(view)  
+navigationController.navigationBar.stopLoadingAnimationWithView(view)  
 ```    
 
 Demo app is also included.

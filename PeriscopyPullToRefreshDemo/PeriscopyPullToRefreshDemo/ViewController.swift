@@ -30,20 +30,20 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    self.navigationController?.navigationBar.translucent = false
-    self.navigationController?.navigationBar.barTintColor = UIColor(red: 121/255.0, green: 189/255.0, blue: 168/255.0, alpha: 1.0)
+    guard let navigationController = self.navigationController else { return }
+    
+    navigationController.navigationBar.translucent = false
+    navigationController.navigationBar.barTintColor = UIColor(red: 121/255.0, green: 189/255.0, blue: 168/255.0, alpha: 1.0)
     
     self.title = "List of elements"
-    let titleView = PeriscopyTitleView(frame: CGRect(x: 0.0, y: 0.0, width: 160.0, height: CGRectGetHeight((self.navigationController?.navigationBar.frame)!)),
-      attachToScrollView: tableView, refreshAction: { [unowned self] in
+    let titleView = PeriscopyTitleView(frame: CGRect(x: 0.0, y: 0.0, width: 160.0, height: navigationController.navigationBar.frame.height),
+      attachToScrollView: tableView, refreshAction: { [unowned navigationController] in
         
-        let view = self.navigationController!.navigationBar.startLoadingAnimation()
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,Int64(2.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(),
-          { [unowned self] in
-            self.navigationController?.navigationBar.stopLoadingAnimationWithView(view)
-          })
-        
+        let view = navigationController.navigationBar.startLoadingAnimation()
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(4 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            navigationController.navigationBar.stopLoadingAnimationWithView(view)
+        }
     })
     
     titleView.titleLabel.textColor = .whiteColor()
