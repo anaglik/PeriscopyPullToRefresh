@@ -8,60 +8,65 @@
 
 import UIKit
 
-extension UINavigationBar{
-  
-  func stripeImage()->UIImage {
+extension UINavigationBar {
+    
+  private func stripeImage() -> UIImage {
     UIGraphicsBeginImageContextWithOptions(CGSize(width: 32, height: 44), false, 0)
     let context = UIGraphicsGetCurrentContext()
     
     // Gradient
-    let gradientColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 0.0800)
-    let gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [gradientColor.CGColor, UIColor.clearColor().CGColor], [0, 0.86])!
+    let gradientColors = [UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 0.0800).cgColor, UIColor.clear.cgColor] as CFArray
+    let gradientObject = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: [0,0.89])
+    
+    guard let ctx = context, let gradient = gradientObject else {
+        return UIImage()
+    }
     
     // Bezier
     let bezierPath = UIBezierPath()
-    bezierPath.moveToPoint(CGPointMake(0.0, 44.0))
-    bezierPath.addLineToPoint(CGPointMake(18.5, 0.0))
-    bezierPath.addLineToPoint(CGPointMake(31.5, 0.0))
-    bezierPath.addLineToPoint(CGPointMake(13.5, 44.0))
-    bezierPath.addLineToPoint(CGPointMake(0.0, 44.0))
-    bezierPath.closePath()
-    CGContextSaveGState(context)
+    bezierPath.move(to: CGPoint(x: 0.0, y: 44.0))
+    bezierPath.addLine(to: CGPoint(x: 18.5, y: 0.0))
+    bezierPath.addLine(to: CGPoint(x: 31.5, y: 0.0))
+    bezierPath.addLine(to: CGPoint(x: 13.5, y: 44.0))
+    bezierPath.addLine(to: CGPoint(x: 0.0, y: 44.0))
+    bezierPath.close()
+    ctx.saveGState()
     bezierPath.addClip()
-    CGContextDrawLinearGradient(context, gradient, CGPointMake(-2.5, 40.5), CGPointMake(34.5, 3.5), CGGradientDrawingOptions())
-    CGContextRestoreGState(context)
+    ctx.drawLinearGradient(gradient, start: CGPoint(x: -2.5, y: 40.5), end: CGPoint(x: 34.5, y: 3.5),
+                           options: CGGradientDrawingOptions())
+    ctx.restoreGState()
     let imageToReturn = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     
-    return imageToReturn
+    return imageToReturn!
   }
   
   
-  func startLoadingAnimation() -> UIView {
+  func startLoadingPeriscopyAnimation() -> UIView {
     let image = stripeImage()
     let extraWidth = (image.size.width) * 8 //adding 8 additional stripes
-
+    
     let animatedView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: self.frame.width + extraWidth, height: self.frame.height))
     animatedView.backgroundColor = UIColor(patternImage: image)
-    animatedView.opaque = false
-    self.insertSubview(animatedView, atIndex: 1)
+    animatedView.isOpaque = false
     
-    UIView.animateWithDuration(2.0, delay: 0.0, options: [.Repeat, .CurveLinear] , animations: {
-      animatedView.frame.origin.x -= extraWidth
-      }, completion: nil)
+    self.insertSubview(animatedView, at: 1)
+    
+    UIView.animate(withDuration: 2.0, delay: 0.0, options: [.repeat, .curveLinear] , animations: {
+        animatedView.frame.origin.x -= extraWidth
+    }, completion: nil)
     
     return animatedView
   }
   
-  func stopLoadingAnimationWithView(view: UIView){
-    UIView.animateWithDuration(1.0, animations: {
-      view.alpha = 0.0
-      }) { [weak view] (completed) -> Void in
+  func stopLoadingPeriscopyAnimationWithView(_ view: UIView){
+    UIView.animate(withDuration: 1.0, animations: {
+        view.alpha = 0.0
+    }, completion: { [weak view] (completed) -> Void in
         if let animatedView = view{
-          animatedView.layer.removeAllAnimations()
-          animatedView.removeFromSuperview()
+            animatedView.layer.removeAllAnimations()
+            animatedView.removeFromSuperview()
         }
-        
-    }
+    })
   }
 }

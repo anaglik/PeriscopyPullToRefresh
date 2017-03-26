@@ -10,9 +10,9 @@
 		A1C7F9D11B99DE4900704B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7F9D01B99DE4900704B50 /* AppDelegate.swift */; };
 		A1C7F9D81B99DE4900704B50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1C7F9D71B99DE4900704B50 /* Assets.xcassets */; };
 		A1C7F9DB1B99DE4900704B50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C7F9D91B99DE4900704B50 /* LaunchScreen.storyboard */; };
-		A1C7F9E51B99DE8500704B50 /* PeriscopyNavBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7F9E21B99DE8500704B50 /* PeriscopyNavBarExtension.swift */; settings = {ASSET_TAGS = (); }; };
-		A1C7F9E61B99DE8500704B50 /* PeriscopyTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7F9E31B99DE8500704B50 /* PeriscopyTitleView.swift */; settings = {ASSET_TAGS = (); }; };
-		A1C7F9E91B99E02E00704B50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7F9E81B99E02E00704B50 /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A1C7F9E51B99DE8500704B50 /* PeriscopyNavBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7F9E21B99DE8500704B50 /* PeriscopyNavBarExtension.swift */; };
+		A1C7F9E61B99DE8500704B50 /* PeriscopyTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7F9E31B99DE8500704B50 /* PeriscopyTitleView.swift */; };
+		A1C7F9E91B99E02E00704B50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7F9E81B99E02E00704B50 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,11 +93,13 @@
 		A1C7F9C51B99DE4900704B50 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Andrzej Naglik";
 				TargetAttributes = {
 					A1C7F9CC1B99DE4900704B50 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = USE5RJLPGC;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -170,8 +172,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -214,8 +218,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -234,6 +240,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -242,10 +249,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = USE5RJLPGC;
 				INFOPLIST_FILE = PeriscopyPullToRefreshDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.an.PeriscopyPullToRefreshDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -253,10 +262,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = USE5RJLPGC;
 				INFOPLIST_FILE = PeriscopyPullToRefreshDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.an.PeriscopyPullToRefreshDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

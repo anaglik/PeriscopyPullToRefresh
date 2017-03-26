@@ -17,16 +17,15 @@ override func viewDidLoad() {
     guard let navigationController = self.navigationController else { return }
 
     let titleView = PeriscopyTitleView(frame: CGRect(x: 0.0, y: 0.0, width: 160.0, height: navigationController.navigationBar.frame.height), attachToScrollView: tableView, refreshAction: {  
-	  					  //your 'refreshing' code 
+	  		//your 'refreshing' code 			  
 	})
 
 	//customization
-	titleView.titleLabel.textColor = .whiteColor()
-	titleView.releaseLabel.textColor = .whiteColor()
-	titleView.releaseLabel.highlightedTextColor = UIColor(red:207/255.0, green:240/255, blue:158/255, alpha:1.0)
-	titleView.releaseLabel.text = "Release to reload"
+    titleView.titleLabel.textColor = .white
+    titleView.releaseLabel.textColor = .white
+    titleView.releaseLabel.highlightedTextColor = UIColor(red:207/255.0, green:240/255, blue:158/255, alpha:1.0)
 
-	self.navigationItem.titleView = titleView
+    self.navigationItem.titleView = titleView
 }
 
 ```
@@ -45,12 +44,11 @@ Demo app is also included.
 
 ## Requirements
 
-Swift 2
+Swift 3
 
 ## Installation
 
 Just drop PeriscopyTitleView.swift file in your project. If you want to use loading animation on UINavigationBar, please add PeriscopyNavBarExtension.swift file as well.
-Support for CocoaPods will be added later.
 
 ## Author
 

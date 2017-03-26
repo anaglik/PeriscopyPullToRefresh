@@ -17,10 +17,10 @@ final public class PeriscopyTitleView: UIView {
   let releaseLabel: UILabel
   
   
-  private var titlePositionConstraint: NSLayoutConstraint?
-  private var previousYPosition: CGFloat
-  private let refreshCallback: ()->Void
-  private var shouldRefresh: Bool
+  fileprivate var titlePositionConstraint: NSLayoutConstraint?
+  fileprivate var previousYPosition: CGFloat
+  fileprivate let refreshCallback: ()->Void
+  fileprivate var shouldRefresh: Bool
   
   weak var scrollingView: UIScrollView? {
     willSet(newScrollView){
@@ -30,23 +30,24 @@ final public class PeriscopyTitleView: UIView {
     }
   }
   
-  private let gradientLayer = CAGradientLayer()
+  fileprivate let gradientLayer = CAGradientLayer()
   
-  init(frame: CGRect, attachToScrollView scrollView: UIScrollView, refreshAction: () -> Void) {
-    titleLabel = UILabel(frame: CGRect.zero)
-    releaseLabel = UILabel(frame: CGRect.zero)
-    previousYPosition = 0.0
-    shouldRefresh = false
-    refreshCallback = refreshAction
+  init(frame: CGRect, attachToScrollView scrollView: UIScrollView, refreshAction: @escaping () -> Void) {
+    self.titleLabel = UILabel(frame: CGRect.zero)
+    self.releaseLabel = UILabel(frame: CGRect.zero)
+    self.previousYPosition = 0.0
+    self.shouldRefresh = false
+    self.refreshCallback = refreshAction
     super.init(frame: frame)
     
-    autoresizingMask = .FlexibleHeight
+    autoresizingMask = .flexibleHeight
     
     scrollingView = scrollView
     startObservingScrollView(scrollingView!)
     
     self.addSubview(titleLabel)
     self.addSubview(releaseLabel)
+    
     setupDefaultUI()
     setupConstraints()
     applyViewMask()
@@ -60,12 +61,12 @@ final public class PeriscopyTitleView: UIView {
     stopObservingCurrentScrollView()
   }
   
-  private func setupDefaultUI(){
+  fileprivate func setupDefaultUI(){
     releaseLabel.text = NSLocalizedString("Release to refresh", comment: "")
     releaseLabel.highlightedTextColor = UIColor(red:207/255.0, green:240/255, blue:158/255, alpha:1.0)
     
-    titleLabel.textAlignment = NSTextAlignment.Center
-    releaseLabel.textAlignment = NSTextAlignment.Center
+    titleLabel.textAlignment = NSTextAlignment.center
+    releaseLabel.textAlignment = NSTextAlignment.center
   }
   
   override public func layoutSubviews() {
@@ -80,33 +81,33 @@ final public class PeriscopyTitleView: UIView {
     let viewsArray = ["titleLabel": titleLabel, "releaseLabel": releaseLabel]
     let metricsArray = ["distance": labelsDistance]
     
-    titlePositionConstraint = NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal,
-                                               toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0.0)
+    titlePositionConstraint = NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal,
+                                               toItem: self, attribute: NSLayoutAttribute.centerY, multiplier: 1.0, constant: 0.0)
     self.addConstraint(titlePositionConstraint!)
 
-    self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[titleLabel(==releaseLabel)]|",
+    self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[titleLabel(==releaseLabel)]|",
                                                                       options: NSLayoutFormatOptions(rawValue: 0) , metrics: nil, views: viewsArray))
-    self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[releaseLabel]-(distance)-[titleLabel]",
-                                                                      options: .AlignAllCenterX, metrics: metricsArray, views: viewsArray))
+    self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[releaseLabel]-(distance)-[titleLabel]",
+                                                                      options: .alignAllCenterX, metrics: metricsArray, views: viewsArray))
     
   }
   
   func applyViewMask() {
-    gradientLayer.colors = [UIColor.clearColor().CGColor, UIColor.whiteColor().CGColor,
-                            UIColor.whiteColor().CGColor, UIColor.clearColor().CGColor]
+    gradientLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor,
+                            UIColor.white.cgColor, UIColor.clear.cgColor]
     gradientLayer.locations = [0.0, 0.3, 0.8, 1.0]
     self.layer.mask = gradientLayer
   }
   
-  override public func willMoveToSuperview(newSuperview: UIView?) {
-    super.willMoveToSuperview(newSuperview)
-    if let superview = newSuperview as? UINavigationBar where titleLabel.text == nil {
+  override public func willMove(toSuperview newSuperview: UIView?) {
+    super.willMove(toSuperview: newSuperview)
+    if let superview = newSuperview as? UINavigationBar, titleLabel.text == nil {
         titleLabel.text = superview.topItem?.title
     }
   }
   
-  func startObservingScrollView(scrollView:UIScrollView) {
-    scrollView.addObserver(self, forKeyPath: kContentOffsetKey, options: .New, context: &KVOContext)
+  func startObservingScrollView(_ scrollView:UIScrollView) {
+    scrollView.addObserver(self, forKeyPath: kContentOffsetKey, options: .new, context: &KVOContext)
   }
   
   func stopObservingCurrentScrollView() {
@@ -115,9 +116,9 @@ final public class PeriscopyTitleView: UIView {
     }
   }
   
-  override public func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+  override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
     if(context != &KVOContext){
-      super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+      super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
     }
     
     if let scrollView = object as? UIScrollView{
@@ -131,10 +132,10 @@ final public class PeriscopyTitleView: UIView {
         point = 0.0
         previousYPosition = point
       }else if(point <= draggingLimit){
-        releaseLabel.highlighted = true;
+        releaseLabel.isHighlighted = true;
         point = draggingLimit
         
-        if(!shouldRefresh && scrollView.decelerating && previousYPosition == draggingLimit){//
+        if(!shouldRefresh && scrollView.isDecelerating && previousYPosition == draggingLimit){//
           refreshCallback()
           shouldRefresh = true
         }
@@ -142,8 +143,8 @@ final public class PeriscopyTitleView: UIView {
         previousYPosition = point
         
       }else{
-        releaseLabel.highlighted = false;
-        if(!shouldRefresh && scrollView.decelerating && previousYPosition == draggingLimit){//
+        releaseLabel.isHighlighted = false;
+        if(!shouldRefresh && scrollView.isDecelerating && previousYPosition == draggingLimit){//
           refreshCallback()
           shouldRefresh = true
         }
